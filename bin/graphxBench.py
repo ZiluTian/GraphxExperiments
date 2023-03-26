@@ -15,9 +15,12 @@ def run(cfreqs, cintervals):
                     cp = config[experiment]["classpath"]
                     now = datetime.now()
                     current_time = now.strftime("%H%M%S")
-                    log_file = f"{LOG_DIR}/{experiment}_cfreq{cfreq}_cint{cint}_{current_time}"
+                    log_file = open(f"{LOG_DIR}/{experiment}_cfreq{cfreq}_cint{cint}_{current_time}", 'a')
                     process = subprocess.run([f'{SPARK_HOME}/bin/spark-submit', '--master', SPARK_MASTER, '--executor-cores', str(SPARK_EXECUTOR_CORES), '--driver-memory', str(SPARK_DRIVER_MEM), '--executor-memory', str(SPARK_EXECUTOR_MEM), '--class', cp, '/root/GraphxExperiments/target/scala-2.12/GraphxExperiments-assembly-1.0-SNAPSHOT.jar', input_file, str(cfreq), str(1)], text=True, stdout=subprocess.PIPE, check=True)
                     print(process.stdout, file=log_file)
+                    os.system('echo 3 > /proc/sys/vm/drop_caches')
+                    log_file.flush()
+                    log_file.close()
 
 if (__name__ == "__main__"):
     assemble = False
