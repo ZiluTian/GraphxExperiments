@@ -223,13 +223,12 @@ object StockMarketGraphx {
             recent100AvgInc = update(100, timer, lastAvg, stock_timeseries)
         }
         var end = System.currentTimeMillis() 
-        println(f"Vertex ${id} round ${timer} time ${end-begin}")
+        // println(f"Vertex ${id} round ${timer} time ${end-begin}")
         List(stock_timeseries, List(lastDividend, lastAvg, currentPrice, dividendIncrease, recent10AvgInc, recent50AvgInc, recent100AvgInc), List(timer), 
         List(cash, shares, estimatedWealth), rules.toList, List(idleCountDown))
       }, // Vertex Program
       triplet => {  // Send Message
         if (triplet.srcId == 0) {
-            // println("send msg from market " + triplet.srcAttr(1))
             Range(0, cfreq).map(i => (triplet.dstId, List(triplet.srcAttr(1)))).toIterator
         } else {
             val idleCountDown: Double = triplet.srcAttr(5).head
