@@ -5,7 +5,7 @@ import org.apache.spark.graphx._
 import scala.util.Random
 
 // With a clock vertex to track idle interval
-object GameOfLifeV3Graphx { 
+object GameOfLife3 { 
   import Simulate.sc
 
   def main(args: Array[String]): Unit = {

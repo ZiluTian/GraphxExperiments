@@ -4,7 +4,7 @@ package simulations
 import org.apache.spark.graphx._
 import scala.util.Random
 
-object GameOfLifeGraphx { 
+object GameOfLife { 
   import Simulate.sc
 
   def main(args: Array[String]): Unit = {

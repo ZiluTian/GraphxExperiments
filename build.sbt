@@ -9,21 +9,12 @@ val sparkVersion = "3.3.0"
 
 run / fork := true
 
-val sparkDeployOption = Option(System.getProperty("sparkDeploy")).getOrElse("local")
-
-lazy val sparkSettings = if (sparkDeployOption == "local") { 
-  println("Local Spark deployment. Please add -DsparkDeploy=cluster to your sbt command to assemble for Spark cluster.")
-  Seq(
-  libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion, 
-  libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion, 
-  libraryDependencies += "org.apache.spark" %% "spark-graphx" % sparkVersion, 
-)} else { 
-  Seq(
+lazy val sparkSettings = Seq(
   // Use following config with "provided" when assemblying a uber jar
   libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
   libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion % "provided", 
   libraryDependencies += "org.apache.spark" %% "spark-graphx" % sparkVersion % "provided", 
-)}
+)
 
 lazy val graphx = (project in file("."))
   .settings(

@@ -7,7 +7,7 @@ import scala.util.Random
 import scala.math.max
 import breeze.stats.distributions.Gamma
 
-object EpidemicsGraphx { 
+object Epidemics { 
   import Simulate.sc
 
   def main(args: Array[String]): Unit = {
