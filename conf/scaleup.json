@@ -27,7 +27,7 @@
     "repeat": 3,
     "spark": {
         "home": "/root/spark3.3",
-        "master": "spark://ic057:7077",
+        "master": "local[*]",
         "driver_mem": "70g",
         "executor_mem": "70g"
     }
