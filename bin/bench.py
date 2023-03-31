@@ -53,9 +53,10 @@ if (__name__ == "__main__"):
     SPARK_DRIVER_MEM=config['spark']['driver_mem']
     SPARK_EXECUTOR_MEM=config['spark']['executor_mem']
 
-    subprocess.run(['mkdir', '-p', LOG_DIR], text=True, stdout=subprocess.PIPE, check=True)
+    if not os.path.exists(LOG_DIR):
+        os.makedirs(LOG_DIR)
     
-    if (assemble):
+    if (assemble or (not os.path.exists("target/scala-2.12/GraphxExperiments-assembly-1.0-SNAPSHOT.jar"))):
         subprocess.run(['sbt', 'assembly'], text=True, stdout=subprocess.PIPE, check=True)
         print(f"Assemble jar file for deployment completed")
 
