@@ -7,6 +7,7 @@ object Simulate {
       .setAppName("GraphxExperiments")
       .set("spark.driver.maxResultSize", "10g")
       .set("spark.hadoop.dfs.replication", "1")
+      .set("spark.graphx.pregel.checkpointInterval", "10")
       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
       // .set("spark.driver.allowMultipleContexts", "true")
 
