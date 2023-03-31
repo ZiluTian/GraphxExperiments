@@ -7,6 +7,8 @@ from datetime import datetime
 
 # user input
 MICRO_BENCHMARK = ""
+# uber jar
+UBER_JAR = "target/scala-2.12/GraphxExperiments-assembly-1.0-SNAPSHOT.jar"
 
 def run(cores, cfreqs, cintervals):
     for core in cores:
@@ -21,7 +23,7 @@ def run(cores, cfreqs, cintervals):
                         if not os.path.exists(f"{LOG_DIR}/{ITERATION}"):
                             os.makedirs(f"{LOG_DIR}/{ITERATION}")
                         log_file = open(f"{LOG_DIR}/{ITERATION}/{MICRO_BENCHMARK}_{experiment}_cores{core}_cfreq{cfreq}_cint{cint}_{current_time}", 'a')
-                        process = subprocess.run([f'{SPARK_HOME}/bin/spark-submit', '--master', SPARK_MASTER, '--executor-cores', str(core), '--driver-memory', str(SPARK_DRIVER_MEM), '--executor-memory', str(SPARK_EXECUTOR_MEM), '--class', cp, 'target/scala-2.12/GraphxExperiments-assembly-1.0-SNAPSHOT.jar', input_file, str(cfreq), str(cint)], text=True, stdout=subprocess.PIPE, check=True)
+                        process = subprocess.run([f'{SPARK_HOME}/bin/spark-submit', '--master', SPARK_MASTER, '--executor-cores', str(core), '--driver-memory', str(SPARK_DRIVER_MEM), '--executor-memory', str(SPARK_EXECUTOR_MEM), '--class', cp, UBER_JAR, input_file, str(cfreq), str(cint)], text=True, stdout=subprocess.PIPE, check=True)
                         print(process.stdout, file=log_file)
                         os.system('echo 3 > /proc/sys/vm/drop_caches')
                         log_file.flush()
@@ -56,9 +58,9 @@ if (__name__ == "__main__"):
     if not os.path.exists(LOG_DIR):
         os.makedirs(LOG_DIR)
     
-    if (assemble or (not os.path.exists("target/scala-2.12/GraphxExperiments-assembly-1.0-SNAPSHOT.jar"))):
+    if (assemble or (not os.path.exists(UBER_JAR))):
+        print(f"Assemble uber jar for deployment")
         subprocess.run(['sbt', 'assembly'], text=True, stdout=subprocess.PIPE, check=True)
-        print(f"Assemble jar file for deployment completed")
 
     for i in range(REPEAT):
         ITERATION = i
