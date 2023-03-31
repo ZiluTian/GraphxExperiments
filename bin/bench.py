@@ -21,7 +21,7 @@ def run(cores, cfreqs, cintervals):
                         if not os.path.exists(f"{LOG_DIR}/{ITERATION}"):
                             os.makedirs(f"{LOG_DIR}/{ITERATION}")
                         log_file = open(f"{LOG_DIR}/{ITERATION}/{MICRO_BENCHMARK}_{experiment}_cores{core}_cfreq{cfreq}_cint{cint}_{current_time}", 'a')
-                        process = subprocess.run([f'{SPARK_HOME}/bin/spark-submit', '--master', SPARK_MASTER, '--executor-cores', str(core), '--driver-memory', str(SPARK_DRIVER_MEM), '--executor-memory', str(SPARK_EXECUTOR_MEM), '--class', cp, 'target/scala-2.12/GraphxExperiments-assembly-1.0-SNAPSHOT.jar', input_file, str(cfreq), str(1)], text=True, stdout=subprocess.PIPE, check=True)
+                        process = subprocess.run([f'{SPARK_HOME}/bin/spark-submit', '--master', SPARK_MASTER, '--executor-cores', str(core), '--driver-memory', str(SPARK_DRIVER_MEM), '--executor-memory', str(SPARK_EXECUTOR_MEM), '--class', cp, 'target/scala-2.12/GraphxExperiments-assembly-1.0-SNAPSHOT.jar', input_file, str(cfreq), str(cint)], text=True, stdout=subprocess.PIPE, check=True)
                         print(process.stdout, file=log_file)
                         os.system('echo 3 > /proc/sys/vm/drop_caches')
                         log_file.flush()
