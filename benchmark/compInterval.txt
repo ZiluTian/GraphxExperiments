@@ -36,3 +36,45 @@ log/2/compInterval_SBM_cores50_cfreq1_cint5_002139:Average time per iteration 33
 log/2/compInterval_stockMarket_cores50_cfreq1_cint10_002500:Average time per iteration 533
 log/2/compInterval_stockMarket_cores50_cfreq1_cint20_003228:Average time per iteration 463
 log/2/compInterval_stockMarket_cores50_cfreq1_cint5_001734:Average time per iteration 537
+
+#checkpoint interval 10
+log1/0/compInterval_ERM_cores50_cfreq1_cint10_150153:Average time per iteration 521
+log1/0/compInterval_ERM_cores50_cfreq1_cint20_150414:Average time per iteration 453
+log1/0/compInterval_ERM_cores50_cfreq1_cint5_145912:Average time per iteration 648
+log1/0/compInterval_gameOfLife_cores50_cfreq1_cint10_150009:Average time per iteration 135      
+log1/0/compInterval_gameOfLife_cores50_cfreq1_cint20_150243:Average time per iteration 135      
+log1/0/compInterval_gameOfLife_cores50_cfreq1_cint5_013103:Average time per iteration 134       
+log1/0/compInterval_gameOfLife_cores50_cfreq1_cint5_145720:Average time per iteration 131       
+log1/0/compInterval_SBM_cores50_cfreq1_cint10_150223:Average time per iteration 332
+log1/0/compInterval_SBM_cores50_cfreq1_cint20_150440:Average time per iteration 320
+log1/0/compInterval_SBM_cores50_cfreq1_cint5_145948:Average time per iteration 359
+log1/0/compInterval_stockMarket_cores50_cfreq1_cint10_150039:Average time per iteration 352     
+log1/0/compInterval_stockMarket_cores50_cfreq1_cint20_150314:Average time per iteration 284     
+log1/0/compInterval_stockMarket_cores50_cfreq1_cint5_013133:Average time per iteration 393      
+log1/0/compInterval_stockMarket_cores50_cfreq1_cint5_145749:Average time per iteration 398   
+
+log1/1/compInterval_ERM_cores50_cfreq1_cint10_150924:Average time per iteration 523
+log1/1/compInterval_ERM_cores50_cfreq1_cint20_151143:Average time per iteration 449
+log1/1/compInterval_ERM_cores50_cfreq1_cint5_150650:Average time per iteration 642
+log1/1/compInterval_gameOfLife_cores50_cfreq1_cint10_150746:Average time per iteration 135      
+log1/1/compInterval_gameOfLife_cores50_cfreq1_cint20_151013:Average time per iteration 133      
+log1/1/compInterval_gameOfLife_cores50_cfreq1_cint5_150459:Average time per iteration 135       
+log1/1/compInterval_SBM_cores50_cfreq1_cint10_150954:Average time per iteration 325
+log1/1/compInterval_SBM_cores50_cfreq1_cint20_151209:Average time per iteration 316
+log1/1/compInterval_SBM_cores50_cfreq1_cint5_150726:Average time per iteration 344
+log1/1/compInterval_stockMarket_cores50_cfreq1_cint10_150817:Average time per iteration 319     
+log1/1/compInterval_stockMarket_cores50_cfreq1_cint20_151044:Average time per iteration 281     
+log1/1/compInterval_stockMarket_cores50_cfreq1_cint5_150530:Average time per iteration 383    
+
+log1/2/compInterval_ERM_cores50_cfreq1_cint10_151654:Average time per iteration 520
+log1/2/compInterval_ERM_cores50_cfreq1_cint20_151915:Average time per iteration 452
+log1/2/compInterval_ERM_cores50_cfreq1_cint5_151421:Average time per iteration 657
+log1/2/compInterval_gameOfLife_cores50_cfreq1_cint10_151518:Average time per iteration 134      
+log1/2/compInterval_gameOfLife_cores50_cfreq1_cint20_151744:Average time per iteration 135      
+log1/2/compInterval_gameOfLife_cores50_cfreq1_cint5_151229:Average time per iteration 132       
+log1/2/compInterval_SBM_cores50_cfreq1_cint10_151723:Average time per iteration 335
+log1/2/compInterval_SBM_cores50_cfreq1_cint20_151941:Average time per iteration 323
+log1/2/compInterval_SBM_cores50_cfreq1_cint5_151457:Average time per iteration 350
+log1/2/compInterval_stockMarket_cores50_cfreq1_cint10_151548:Average time per iteration 310     
+log1/2/compInterval_stockMarket_cores50_cfreq1_cint20_151814:Average time per iteration 287     
+log1/2/compInterval_stockMarket_cores50_cfreq1_cint5_151259:Average time per iteration 392   
